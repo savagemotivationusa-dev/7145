@@ -1,0 +1,253 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Math 2AS Info – Contrôle N°2</title>
+<style>
+:root{--bg:#f6f7fb;--c:#fff;--t:#1c2333;--m:#5b6478;--a:#2b5fd9;--ok:#16794c;--ko:#b3261e;--b:#dde1ec;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#10131c;--c:#181d2a;--t:#e8ebf4;--m:#9aa3b8;--a:#7aa2ff;--ok:#4cc38a;--ko:#ff8a80;--b:#2a3145;color-scheme:dark}}
+*{box-sizing:border-box}html,body{height:100%;margin:0}body{background:var(--bg);color:var(--t);font:16px/1.55 system-ui,Segoe UI,sans-serif;display:flex}
+nav{width:230px;flex:none;background:var(--c);border-right:1px solid var(--b);padding:14px;overflow:auto}nav h1{font-size:15px;margin:0 0 10px}
+nav button{display:block;width:100%;text-align:left;background:none;border:0;color:var(--t);padding:8px 10px;border-radius:8px;cursor:pointer;font:inherit;font-size:14px}nav button.on,nav button:hover{background:var(--bg);color:var(--a)}
+main{flex:1;overflow:auto;padding:20px;max-width:900px;margin:0 auto}
+.card{background:var(--c);border:1px solid var(--b);border-radius:12px;padding:14px 16px;margin:12px 0}
+.ex h3{margin:0 0 6px;color:var(--a)}.q{border-top:1px dashed var(--b);padding:10px 0}textarea,input{width:100%;font:inherit;background:var(--bg);color:var(--t);border:1px solid var(--b);border-radius:8px;padding:6px}
+.btn{background:var(--a);color:#fff;border:0;border-radius:8px;padding:10px 16px;font:inherit;cursor:pointer;margin:4px 6px 4px 0}.btn.s{background:var(--m)}
+.sol{background:var(--bg);border-left:4px solid var(--a);padding:8px 12px;margin-top:8px;border-radius:6px}.ok{color:var(--ok);font-weight:600}.ko{color:var(--ko);font-weight:600}
+.note{color:var(--m);font-size:13px}.big{font-size:28px;font-weight:700}mjx-container{overflow-x:auto;max-width:100%}
+@media(max-width:720px){body{flex-direction:column}nav{width:100%;border:0;border-bottom:1px solid var(--b);display:flex;flex-wrap:wrap;gap:4px}nav h1{width:100%}nav button{width:auto}}
+</style>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],macros:{v:['\\overrightarrow{#1}',1]}},svg:{fontCache:'global'}};</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"></script></head>
+<body><nav id="nav"></nav><main id="main"></main>
+<script>
+const R=String.raw;
+// q=[énoncé, solution, réponses auto|null]  ex=[titre, pts, intro, [q...]]
+const D=[
+{t:"Devoir 1 – 2009 (Mr Meddeb Tarak)",m:"Lycée Tahar Sfar Mahdia · 2ème Info · 18/11/2009 · 1 h · barème : 3 + 8 + 9 = 20",ex:[
+["Exercice n°1",3,R`Résoudre dans IR l’inéquation :`,[[R`$|x^2-2x-5|\le x-1$.`,R`Il faut $x\ge1$ et $-(x-1)\le x^2-2x-5\le x-1$. Droite : $x^2-3x-4\le0\Rightarrow[-1,4]$. Gauche : $x^2-x-6\ge0\Rightarrow x\le-2$ ou $x\ge3$. Avec $x\ge1$ : $S=[3,4]$.`,null]]],
+["Exercice n°2",8,R`On considère les polynômes P et Q définis par : $P(x)=x^4-5x^2+4$ et $Q(x)=2x^3+x^2-5x+2$.`,[
+[R`1) Factoriser $P(x)$.`,R`$P=(x^2-1)(x^2-4)=(x-1)(x+1)(x-2)(x+2)$.`,null],
+[R`2) a/ Calculer $Q(-2)$.`,R`$Q(-2)=-16+4+10+2=0$.`,["0"]],
+[R`b/ Trouver les réels a, b et c tels que, pour tout $x\in IR$, $Q(x)=(x+2)(ax^2+bx+c)$.`,R`Développer : $ax^3+(b+2a)x^2+(c+2b)x+2c$. Identification : $a=2,\ b=-3,\ c=1$.`,null],
+[R`c/ Ecrire $Q(x)$ sous la forme d’un produit de trois facteurs.`,R`$2x^2-3x+1=(2x-1)(x-1)$ donc $Q=(x+2)(2x-1)(x-1)$.`,null],
+[R`3) Soit le polynôme H défini par : $H(x)=x^4+4x^3-3x^2-10x+8$. a/ Vérifier que : $H(x)=(P+2Q)(x)$.`,R`$P+2Q=x^4-5x^2+4+4x^3+2x^2-10x+4=x^4+4x^3-3x^2-10x+8$ ✓.`,null],
+[R`b/ Résoudre dans IR l’inéquation : $H(x)\le0$.`,R`$H=(x-1)(x+2)(x^2+3x-4)=(x-1)^2(x+2)(x+4)$. $(x-1)^2\ge0$, nul en 1. $(x+2)(x+4)\le0\iff x\in[-4,-2]$. $S=[-4,-2]\cup\{1\}$.`,null]]],
+["Exercice n°3",9,R`Soit ABC un triangle, I est le symétrique de A par rapport à B. J est le barycentre des points pondérés (B , 2), (C , 3).`,[
+[R`1) a/ Construire le point J.`,R`$2\v{JB}+3\v{JC}=\vec0\Rightarrow \v{BJ}=\tfrac35\v{BC}$.`,null],
+[R`b/ Déterminer deux réels $\alpha$ et $\beta$ tels que : $\alpha\v{IA}+\beta\v{IB}=\vec0$.`,R`B milieu de [AI] : $\v{IA}=2\v{IB}$, donc $\alpha=1,\ \beta=-2$ (ou multiples).`,null],
+[R`2) soit G le barycentre des points pondérés (A , −1), (B , 2) et (C , 3). a/ Montrer que G est le barycentre des points pondérés (I , 1), (C , 3).`,R`$-\v{IA}+2\v{IB}=\vec0$ : I est barycentre de (A,−1),(B,2) (poids total 1). Associativité : G = bar{(I,1),(C,3)}.`,null],
+[R`b/ Montrer que les points A, J et G sont alignés.`,R`$2B+3C=5J$ : G = bar{(A,−1),(J,5)} (poids total 4≠0), donc G ∈ (AJ).`,null],
+[R`c/ Construire alors le point G.`,R`G = (AJ) ∩ (IC).`,null],
+[R`3) Déterminer et construire l’ensemble $\Delta$ des points M du plan vérifiant : $\|-\v{MA}+2\v{MB}+3\v{MC}\|=\|4\v{MA}-8\v{MB}\|$.`,R`$-\v{MA}+2\v{MB}+3\v{MC}=4\v{MG}$ et $4\v{MA}-8\v{MB}=-4\v{MI}$. D’où $MG=MI$ : $\Delta$ = médiatrice de [GI].`,null]]]]},
+{t:"Devoir 2 – 2014/2015 (Mr Chaabane Mounir)",m:"L. El Farabi Manouba · 2 Info · barème : 6 + 7 + 7 = 20",ex:[
+["Exercice n°1",6,R`Le signe de $f(x)=ax^2+bx+c$ est donné par le tableau suivant : $x$ : $-\infty$, −5, 5, $+\infty$ ; $f(x)$ : + , − , + .`,[
+[R`1- Trouver le signe de a, $\Delta$, f(0).`,R`$a>0$, $\Delta>0$ (deux racines), $f(0)<0$ (0 ∈ ]−5,5[).`,null],
+[R`2- Calculer $\frac ba$ ; $\frac ca$.`,R`Racines −5 et 5 : $S=0\Rightarrow b/a=0$ ; $P=-25\Rightarrow c/a=-25$.`,null],
+[R`3- Résoudre dans IR $(x^2-9)f(x)>0$.`,R`Tableau de signes : $S=]-\infty,-5[\cup]-3,3[\cup]5,+\infty[$.`,null],
+[R`4- Déterminer f(x) si f(0)=−25.`,R`$f=a(x^2-25)$, $f(0)=-25a=-25\Rightarrow a=1$ : $f(x)=x^2-25$.`,["x²-25","x^2-25","x^2-25"]]]],
+["Exercice n°2",7,R`Soit $A(x)=2x^2-5x+2$.`,[
+[R`1- Montrer que les deux racines s’il existe sont inverse.`,R`$P=c/a=1$ : produit des racines égal à 1 ⇒ inverses (Δ=9>0, elles existent).`,null],
+[R`2- Vérifier que 2 est une racine ; trouver l’autre sans calculer $\Delta$.`,R`$A(2)=8-10+2=0$ ; produit =1 ⇒ autre racine $=\tfrac12$.`,["1/2","0.5","0,5"]],
+[R`3- Résoudre dans IR : a- $2x^2-5x+2>0$`,R`$S=]-\infty,\tfrac12[\cup]2,+\infty[$.`,null],
+[R`b- $2+\dfrac{6-7x}{x^2+x-2}\le0$`,R`$=\dfrac{2x^2-5x+2}{(x+2)(x-1)}\le0$. $S=]-2,\tfrac12]\cup]1,2]$.`,null],
+[R`c- $\sqrt{2x^2-5x+2}<|2x-1|$`,R`Domaine : $x\le\frac12$ ou $x\ge2$. Carré : $2x^2+x-1>0\iff x<-1$ ou $x>\frac12$. $S=]-\infty,-1[\cup[2,+\infty[$.`,null]]],
+["Exercice n°3",7,R`Soit ABC un triangle tel que AB=4, AC=5 et BC=6 ; I milieu de [AB], J milieu de [BC] et H le point défini par $\v{AH}=\frac13\v{AC}$.`,[
+[R`1-a- Montrer que H est le barycentre des points pondérés (A,2) (C,1).`,R`$\v{AC}=\v{AH}+\v{HC}$ et $3\v{AH}=\v{AC}$ ⇒ $2\v{HA}+\v{HC}=\vec0$.`,null],
+[R`b- Construire H.`,R`H au tiers de [AC] à partir de A.`,null],
+[R`2- Soit K défini par $2\v{KA}+3\v{KB}+\v{KC}=\vec0$. a- Montrer K milieu [HB].`,R`$2\v{KA}+\v{KC}=3\v{KH}$ ⇒ $3(\v{KH}+\v{KB})=\vec0$ : K milieu de [HB].`,null],
+[R`b- Montrer que K est le barycentre des points pondérés (I,2) et (J,1).`,R`$2\v{KA}+2\v{KB}=4\v{KI}$, $\v{KB}+\v{KC}=2\v{KJ}$ ⇒ $4\v{KI}+2\v{KJ}=\vec0$ ⇒ $2\v{KI}+\v{KJ}=\vec0$.`,null],
+[R`c- En déduire une construction simple de K`,R`K ∈ [IJ] avec $\v{IK}=\frac13\v{IJ}$.`,null],
+[R`4- Déterminer l’ensemble $\mathcal C=\{M\in P\ tq\ \|2\v{MA}+\v{MC}\|=\|\v{MB}-\v{MC}\|\}$`,R`$3MH=CB=6$ ⇒ MH=2 : cercle de centre H, rayon 2.`,null],
+[R`et $\Delta=\{M\in P\ tq\ \|2\v{MA}+3\v{MB}+\v{MC}\|=\|4\v{MA}+2\v{MC}\|\}$`,R`$6MK=6MH$ : $\Delta$ = médiatrice de [HK].`,null]]]]},
+{t:"Devoir 3 – Mr Hechmi A.",m:"2ème sc. info · 1 h · barème : 5 + 7 + 8 = 20 (année non précisée sur le sujet)",ex:[
+["Exercice n°1 – Recopier la réponse correcte (répondre a, b ou c)",5,"",[
+[R`1/ l’ensemble des solutions de $x^2+x-6\le0$ est : a) [-2,3] b) [-3,2] c) ]−∞,−3]∪[2,+∞[`,R`Racines −3 et 2 : b.`,["b"]],
+[R`2/ l’inéquation $\sqrt{x^2+1}<x-3$ est définie sur : a) [1,+∞[ b) IR c) [3,+∞[`,R`$x^2+1>0$ toujours : b (IR).`,["b"]],
+[R`3/ E barycentre de (A,2) et (B,4) : a) $\v{AE}=\frac23\v{AB}$ b) $\v{AE}=\frac13\v{AB}$ c) $\v{AE}=\frac64\v{AB}$`,R`$\v{AE}=\frac{4}{6}\v{AB}$ : a.`,["a"]],
+[R`4/ G barycentre de (A,1) et (B,3) ; A est le barycentre de : a) (G,4) et (B,−3) b) (G,4) et (B,3) c) (G,4) et (B,1)`,R`$A=4G-3B$ : a.`,["a"]],
+[R`5/ le trinôme $ax^2+bx+c$ est positif pour tout x ∈ IR alors : a) Δ est positif b) a est négatif c) a est positif`,R`$a>0$ et $\Delta\le0$ : c.`,["c"]]]],
+["Exercice n°2",7,R`Résoudre dans IR les inéquations suivantes :`,[
+[R`1/ $2x^2-7x+6>0$`,R`Racines 3/2 et 2 : $S=]-\infty,\frac32[\cup]2,+\infty[$.`,null],
+[R`2/ $\dfrac{3x-8}{x^2-4}\le2$`,R`$\iff\dfrac{x(2x-3)}{(x-2)(x+2)}\ge0$ : $S=]-\infty,-2[\cup[0,\frac32]\cup]2,+\infty[$.`,null],
+[R`3/ $\sqrt{2x+3}-x\le0$`,R`$x\ge0$ et $2x+3\le x^2\iff x\ge3$ : $S=[3,+\infty[$.`,null]]],
+["Exercice n°3",8,R`Soit ABC un triangle.`,[
+[R`1) Soit H barycentre de (A,2) et (B,−3). a) Recopier et compléter : $\dots\v{HA}+\dots\v{HB}=\dots$ ; $\v{AH}=\dots\v{AB}$ ; $\v{BH}=\dots\v{BA}$`,R`$2\v{HA}-3\v{HB}=\vec0$ ; $\v{AH}=3\v{AB}$ ; $\v{BH}=-2\v{BA}$.`,null],
+[R`b) Construire H`,R`H=3B−2A : sur (AB), $\v{AH}=3\v{AB}$.`,null],
+[R`2) Construire le point E barycentre de (B,−3) et (C,−2).`,R`$\v{BE}=\frac{-2}{-5}\v{BC}=\frac25\v{BC}$.`,null],
+[R`3) On désigne par G le point vérifiant : $2\v{GA}-3\v{GB}-2\v{GC}=\vec0$. a) Montrer que G est le barycentre de (H,−1) et (C,−2).`,R`$2\v{GA}-3\v{GB}=-\v{GH}$ ⇒ $-\v{GH}-2\v{GC}=\vec0$.`,null],
+[R`b) Montrer que les points G, E et A sont alignés.`,R`$-3\v{GB}-2\v{GC}=-5\v{GE}$ ⇒ G = bar{(A,2),(E,−5)}.`,null],
+[R`c) En déduire que les droites (AE) et (CH) sont sécantes en G, et construire G`,R`G ∈ (AE) et G ∈ (CH) ; les droites sont distinctes donc G est leur intersection.`,null],
+[R`4) Déterminer l’ensemble des points M tel que : $\|2\v{MA}-3\v{MB}\|=1$`,R`$2\v{MA}-3\v{MB}=-\v{MH}$ ⇒ MH=1 : cercle de centre H, rayon 1.`,null]]]]},
+{t:"Devoir 4 – 2017 (Mr Afli Abdelaziz)",m:"L.S. Ibn Sina Nasrallah · 28-11-2017 · 1 h · barème : 4 + 5,5 + 4 + 6,5 = 20",ex:[
+["Exercice n°1 – Pour chaque question une seule des propositions est vraie. Laquelle ?",4,"",[
+[R`1) T(x)=ax²+bx+c, tableau : x −∞ −1 3 +∞ ; T : − 0 + 0 − . On peut affirmer : a) a>0 b) T(1+√2)>0 c) c=3a`,R`a<0 ; $1+\sqrt2\in]-1,3[$ donc T>0 : b. (c=−3a.)`,["b"]],
+[R`2) Les deux équations $x=\sqrt{2x+3}$ et $x^2=2x+3$ sont équivalentes sur : a) IR b) [0,+∞[ c) [−3/2,+∞[`,R`Il faut $x\ge0$ : b.`,["b"]],
+[R`3) L’équation $x^4-x^2+\frac14=0$ admet dans IR exactement : a) deux solutions b) quatre solutions c) aucune solution`,R`$(x^2-\frac12)^2=0\Rightarrow x=\pm\frac1{\sqrt2}$ : a.`,["a"]],
+[R`4) Figure : A, C, B alignés, $\v{AC}=\frac23\v{AB}$. C est le barycentre des points : a) (A,−1) et (B,2) ; b) (A,1) et (B,1) ; c) (A,1) et (B,2)`,R`$\v{AC}=\frac{2}{3}\v{AB}$ : c.`,["c"]]]],
+["Exercice n°2",5.5,R`Résoudre dans IR :`,[
+[R`1) $x^2+3x+3=0$`,R`$\Delta=-3<0$ : $S=\emptyset$.`,["vide","∅","ensemble vide"]],
+[R`2) $x^2+2x-3=0$`,R`$S=\{-3,1\}$.`,null],
+[R`3) $-x^2+x+6=0$`,R`$S=\{-2,3\}$.`,null],
+[R`4) $(x^2+2x-3)(-x^2+x+6)>0$`,R`Tableau de signes : $S=]-3,-2[\cup]1,3[$.`,null]]],
+["Exercice n°3",4,R`Soit le trinôme $A(x)=x^2+(\sqrt2+1)x-4+2\sqrt2$, $x\in IR$.`,[
+[R`1) a) Vérifier que $(\sqrt2-1)$ est une solution de l’équation A(x)=0`,R`$(\sqrt2-1)^2=3-2\sqrt2$ ; $(\sqrt2+1)(\sqrt2-1)=1$ ; somme : $3-2\sqrt2+1-4+2\sqrt2=0$ ✓.`,null],
+[R`b) Déduire l’autre solution`,R`Produit $=-4+2\sqrt2$ ⇒ autre racine $=-2\sqrt2$.`,["-2√2","-2sqrt2","-2racine2"]],
+[R`2) Factoriser A(x)`,R`$A(x)=(x-\sqrt2+1)(x+2\sqrt2)$.`,null]]],
+["Exercice n°4",6.5,R`Soit ABC un triangle. On désigne par G le barycentre des points pondérés (A,3), (B,4) et (C,−1).`,[
+[R`1) Ecrire une relation vectorielle qui définie G`,R`$3\v{GA}+4\v{GB}-\v{GC}=\vec0$.`,null],
+[R`2) Construire le point I barycentre des points pondérés (B,4) et (C,−1)`,R`$\v{BI}=\frac{-1}{3}\v{BC}$.`,null],
+[R`3) a) Exprimer $4\v{GB}-\v{GC}$ en fonction de $\v{GI}$`,R`$4\v{GB}-\v{GC}=3\v{GI}$.`,null],
+[R`b) Déduire que G est le milieu du segment [AI] et construire G`,R`$3\v{GA}+3\v{GI}=\vec0$ ⇒ G milieu de [AI].`,null],
+[R`4) Déterminer et construire l’ensemble $\xi=\{M\in Plan,\ tel\ que\ \|3\v{MA}+4\v{MB}-\v{MC}\|=3AI\}$`,R`Somme 6 : $6MG=3AI\Rightarrow MG=\frac{AI}2$ : cercle de centre G, rayon AI/2.`,null]]]]},
+{t:"Devoir 5 – 2010-2011 (Mme Guesmia Aziza)",m:"Lycée Nafta · 2ème Tech. Inf. · Nov. 2010 · 1 h · barème : 2 + 8 + 10 = 20. ⚠ Transcription depuis un texte PDF dégradé : vérifie les passages marqués ⚠ avec le PDF.",ex:[
+["Exercice n°1 – Mettre une croix devant l’assertion correcte",2,"",[
+[R`L’ensemble S des solutions de $x^2+9=0$ est : S={−3} ; S={−3 ; 3} ; S=∅. (répondre : vide / ∅)`,R`$x^2=-9$ impossible : $S=\emptyset$.`,["vide","∅","ensemble vide"]],
+[R`L’inéquation $\frac32x-\frac54>x+2$ est équivalente à : x ≥ 4,5 ; x > 6,5 ; x > −4,5. (répondre : 6,5 ; 4,5 ou −4,5)`,R`$\frac x2>\frac{13}4\iff x>6{,}5$.`,["6,5","6.5","x>6,5","x>6.5"]]]],
+["Exercice n°2",8,"",[
+[R`1) Donner la forme canonique du trinôme du second degré : $f(x)=2x^2-8x+6$.`,R`$f(x)=2(x-2)^2-2$.`,["2(x-2)²-2","2(x-2)^2-2"]],
+[R`2) Résoudre dans IR : a) $x^2+2x-3=0$.`,R`$S=\{-3,1\}$.`,null],
+[R`b) ⚠ $\dfrac{x-1}{x-4}-\dfrac{5x+3}{3x+2}=0$ (énoncé à vérifier sur le PDF).`,R`Énoncé incertain : pas de solution fournie. Corrige toi-même d’après le PDF (conditions d’existence $x\ne4$, $x\ne-\frac23$).`,null],
+[R`3) Résoudre le système : $x+y=-1$ ; $x\cdot y=-12$.`,R`$X^2+X-12=0$ : (x,y)=(3,−4) ou (−4,3).`,null],
+[R`4) Résoudre dans IR l’inéquation : $\dfrac{x^2+2x-3}{(x-1)(x^2+1)}\ge0$.`,R`Simplifier : $\frac{x+3}{x^2+1}$, $x\ne1$ : $S=[-3,1[\cup]1,+\infty[$.`,null]]],
+["Exercice n°3",10,R`ABCD est un rectangle tel que : AB=6 cm. G est le barycentre du système {(A;2);(B;1)} et H est le barycentre du système {(C;5);(D;−2)}.`,[
+[R`1) Déterminer et construire l’ensemble $E_1$ des points M du plan tels que : $\|2\v{MA}+\v{MB}\|=\|5\v{MC}-2\v{MD}\|$.`,R`$3MG=3MH$ : médiatrice de [GH].`,null],
+[R`2) Montrer que le milieu de [BC] appartient à $E_1$.`,R`Repère A(0,0), B(6,0), C(6,h), D(0,h) : G(2,0), H(10,h), N(6,h/2) : $NG^2=NH^2=16+h^2/4$.`,null],
+[R`3) ⚠ Déterminer et construire l’ensemble $E_2$ des points M tels que : $\|2\v{MA}+\v{MB}\|=2$ (valeur à vérifier).`,R`Si l’énoncé est bien celui-ci : $3MG=2$, cercle de centre G, rayon 2/3. Mais alors B ∉ E2 (BG=4) : énoncé probablement dégradé, vérifie le PDF.`,null],
+[R`4) Montrer que le point B appartient à $E_2$.`,R`Dépend de l’énoncé exact de la question 3 (voir ⚠).`,null]]]]},
+{t:"Devoir 6 – 2013/2014 (Mr Slah Khalfouli)",m:"L.S. Omar Elkalchèni Béja · 2 Tec · 1 h · barème : 4 + 8 + 7 = 19 (total du sujet tel qu’écrit)",ex:[
+["Exercice 1 – Répondre par vrai ou faux (v / f)",4,"",[
+[R`1) Le réel 2 est une solution de l’inéquation : $x^2-4x\le0$.`,R`$4-8=-4\le0$ : vrai.`,["v","vrai"]],
+[R`2) Si $a+b=6$ et $ab=-5$ alors $a=1$ et $b=5$.`,R`$1\times5=5\ne-5$ : faux.`,["f","faux"]],
+[R`3) Les vecteurs $\vec u\binom{-2}{1}$ et $\vec v\binom{3}{6}$ sont orthogonaux.`,R`$-6+6=0$ : vrai.`,["v","vrai"]],
+[R`4) Si A(−1 ; 2) et B(2 ; 6) alors AB=5.`,R`$\sqrt{9+16}=5$ : vrai.`,["v","vrai"]]]],
+["Exercice 2",8,R`On considère les deux expressions suivantes : $A(x)=x^2-2x-3$ et $B(x)=x^2+x+1$.`,[
+[R`1) Donner le tableau de signe de A(x) et B(x).`,R`$A=(x-3)(x+1)$ : + sur $]-\infty,-1[\cup]3,+\infty[$, − sur ]−1,3[. $B$ : $\Delta=-3<0$, B>0 partout.`,null],
+[R`2) Donner le signe des réels suivants : $A(-2)$, $A(\frac23)$ et $A(5)$.`,R`$A(-2)=5>0$ ; $A(\frac23)<0$ ; $A(5)=12>0$.`,null],
+[R`3) Résoudre dans IR : a) $A(x)\le0$.`,R`$S=[-1,3]$.`,null],
+[R`b) $B(x)\le0$.`,R`$S=\emptyset$.`,["vide","∅"]],
+[R`c) $x^3-2x^2-3x<0$.`,R`$x\,A(x)<0$ : $S=]-\infty,-1[\cup]0,3[$.`,null],
+[R`4) Déterminer deux réels a et b tels que : $a+b=2$ et $ab=-3$.`,R`$X^2-2X-3=0$ : {a,b}={3,−1}.`,null]]],
+["Exercice 3",7,R`Dans le plan muni d’un repère orthonormé (O, $\vec i$, $\vec j$) on considère les points : A(2,4), B(−2,1), C(2,−1).`,[
+[R`1) Placer les points A, B et C.`,R`Placement dans le repère.`,null],
+[R`2) Calculer les distances AB et AC.`,R`$AB=\sqrt{16+9}=5$ ; $AC=\sqrt{0+25}=5$.`,["5"]],
+[R`3) En déduire la nature du triangle ABC.`,R`AB=AC : isocèle en A.`,null],
+[R`4) On donne le point D(−2,−4). a) Déterminer les composantes des vecteurs $\v{AD}$ et $\v{BC}$.`,R`$\v{AD}\binom{-4}{-8}$ ; $\v{BC}\binom{4}{-2}$.`,null],
+[R`b) Montrer que les vecteurs $\v{AD}$ et $\v{BC}$ sont orthogonaux.`,R`$-16+16=0$.`,null],
+[R`5) Montrer que le quadrilatère ABDC est un losange.`,R`$AB=5$, $BD=5$, $DC=5$, $CA=5$ : quatre côtés égaux.`,null]]]]}];
+const COURS=R`<h2>Cours (condensé – notions présentes dans les 6 devoirs)</h2>
+<div class=card><h3>1. Trinôme $ax^2+bx+c$ ($a\ne0$)</h3><p><b>Idée :</b> une parabole. <b>Discriminant</b> $\Delta=b^2-4ac$. Forme canonique : $a\big[(x+\frac b{2a})^2-\frac\Delta{4a^2}\big]$.</p><p>$\Delta>0$ : deux racines $\frac{-b\pm\sqrt\Delta}{2a}$ ; $\Delta=0$ : une racine double ; $\Delta<0$ : aucune racine.</p><p><b>Somme et produit :</b> $S=-\frac ba$, $P=\frac ca$ ; si $a+b+c=0$ alors 1 est racine ; si on connaît une racine $x_1$, l’autre est $P/x_1$. Système $x+y=S,\ xy=P$ ⇒ x,y racines de $X^2-SX+P$.</p><p><b>Signe :</b> signe de $a$ à l’extérieur des racines, signe de $-a$ entre elles ; si $\Delta<0$, signe de $a$ partout. <i>Exemple :</i> $x^2-2x-3=(x-3)(x+1)$ est ≤0 sur [−1,3]. <i>Erreur fréquente :</i> oublier d’inclure les racines pour ≤ et ≥.</p></div>
+<div class=card><h3>2. Inéquations (quotient, racine, valeur absolue)</h3><p><b>Quotient :</b> tout mettre d’un côté, réduire au même dénominateur, tableau de signes ; <i>les valeurs interdites sont toujours exclues</i>.</p><p>$\sqrt{f}<g$ : domaine $f\ge0$, $g>0$ et $f<g^2$. $\sqrt f\le x$ : $x\ge0$ et $f\le x^2$. $|u|\le v$ ⇔ $v\ge0$ et $-v\le u\le v$.</p><p>Polynôme de degré 3-4 : factoriser (racine évidente, division ou identification) puis tableau de signes.</p></div>
+<div class=card><h3>3. Barycentre</h3><p><b>Définition :</b> si $\alpha+\beta\ne0$, G = bar{(A,α),(B,β)} ⇔ $\alpha\v{GA}+\beta\v{GB}=\vec0$ ⇔ $\v{AG}=\frac\beta{\alpha+\beta}\v{AB}$.</p><p><b>Réduction :</b> $\alpha\v{MA}+\beta\v{MB}+\gamma\v{MC}=(\alpha+\beta+\gamma)\v{MG}$ (somme ≠0). <b>Associativité :</b> on remplace deux points par leur barycentre pondéré de la somme de leurs poids.</p><p><b>Ensembles de points :</b> $\|k\v{MG}\|=\|k'\v{MH}\|$ ⇒ médiatrice de [GH] (si k=k') ; $\|k\v{MG}\|=r$ ⇒ cercle de centre G, rayon $r/|k|$. <i>Piège :</i> vérifier que la somme des poids ≠ 0.</p></div>
+<div class=card><h3>4. Géométrie analytique (repère orthonormé)</h3><p>$\v{AB}(x_B-x_A,\ y_B-y_A)$ ; $AB=\sqrt{(x_B-x_A)^2+(y_B-y_A)^2}$ ; $\vec u\binom xy\perp\vec v\binom{x'}{y'}\iff xx'+yy'=0$. Losange : 4 côtés égaux.</p></div>
+<p class=note>Cours volontairement condensé (version allégée). Les exemples détaillés et exercices d’application complémentaires ne sont pas encore inclus.</p>`;
+const RESUME=R`<h2>Résumé – méthodes par type d’exercice</h2>
+<div class=card><b>Résoudre $ax^2+bx+c\ \gtrless0$</b> : calculer Δ → racines → signe de a / −a → conclure avec les crochets corrects.</div>
+<div class=card><b>Inéquation avec quotient</b> : tout à gauche, un seul quotient, factoriser N et D, tableau de signes, exclure les zéros du dénominateur.</div>
+<div class=card><b>Inéquation avec racine</b> : domaine → conditions de signe → élevage au carré → intersection finale.</div>
+<div class=card><b>Montrer qu’un point est barycentre</b> : partir de la relation vectorielle, regrouper avec Chasles ou utiliser l’associativité.</div>
+<div class=card><b>Ensemble de points</b> : réduire chaque vecteur avec le barycentre (poids total ≠0) → médiatrice ou cercle.</div>
+<div class=card><b>Pièges</b> : oublier le domaine ; ≤ avec dénominateur nul inclus ; confondre $\vec{AB}$ et $\vec{BA}$ ; poids totaux nuls ; ne pas justifier la factorisation. <b>Astuce :</b> tester une racine évidente (0, ±1, ±2) pour factoriser un degré 3.</div>`;
+const $=s=>document.querySelector(s),LS=(k,v)=>{try{if(v===undefined)return JSON.parse(localStorage.getItem(k));localStorage.setItem(k,JSON.stringify(v))}catch(e){return null}};
+const norm=s=>(s||"").toLowerCase().replace(/\s+/g,"").replace(/,/g,".");
+let cur="home";
+function nav(){const items=[["home","Accueil"],["cours","Cours"],["resume","Résumé"],...D.map((d,i)=>["d"+i,"Devoir "+(i+1)]),["hist","Historique"]];
+$("#nav").innerHTML="<h1>Math 2AS Info · Contrôle 2</h1>"+items.map(([k,l])=>`<button class="${k==cur?'on':''}" onclick="go('${k}')">${l}</button>`).join("")}
+function go(k){cur=k;nav();const m=$("#main");m.scrollTop=0;
+if(k=="home"){const h=LS("hist")||[];m.innerHTML=`<h1>Plateforme de révision – Contrôle N°2</h1><div class=card>6 devoirs réels intégrés · barème original par exercice · réponses sauvegardées automatiquement.<br>${h.length?`<span class=big>${h[h.length-1].note}/${h[h.length-1].max}</span> dernier résultat (${h[h.length-1].t})`:"Aucune correction enregistrée."}</div>`+D.map((d,i)=>`<div class=card><b>${d.t}</b><br><span class=note>${d.m}</span><br><button class=btn onclick="go('d${i}')">Ouvrir</button></div>`).join("")}
+else if(k=="cours")m.innerHTML=COURS;else if(k=="resume")m.innerHTML=RESUME;else if(k=="hist")hist();else dev(+k.slice(1));
+if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise([m])}
+function hist(){const h=LS("hist")||[];$("#main").innerHTML="<h2>Historique</h2>"+(h.length?h.slice().reverse().map(e=>`<div class=card><b>${e.t}</b> – ${e.date}<br><span class=big>${e.note}/${e.max}</span> (${e.pct}%)<br>${e.ex}</div>`).join(""):"<p>Rien d’enregistré.</p>")+`<button class="btn s" onclick="if(confirm('Tout effacer ?')){LS('hist',[]);hist()}">Effacer l’historique</button>`}
+function dev(i){const d=D[i],sv=LS("ans"+i)||{};let h=`<h2>${d.t}</h2><p class=note>${d.m}</p><p class=note>Le sujet n’indique que le barème par exercice : il est réparti à parts égales entre les questions (estimation signalée).</p>`;
+d.ex.forEach((e,x)=>{h+=`<div class="card ex"><h3>${e[0]} (${e[1]} pts)</h3><div>${e[2]}</div>`;e[3].forEach((q,y)=>{const k=x+"_"+y;h+=`<div class=q><div>${q[0]}</div><textarea rows=2 data-k="${k}" placeholder="Ta réponse / résolution (aide-toi d’une feuille)">${sv[k]||""}</textarea><div id="r${k}"></div></div>`});h+="</div>"});
+h+=`<button class=btn onclick="corr(${i})">Corriger mon devoir</button><button class="btn s" onclick="if(confirm('Effacer mes réponses ?')){LS('ans${i}',{});go('d${i}')}">Réinitialiser</button><div id=res></div>`;$("#main").innerHTML=h;
+document.querySelectorAll("textarea").forEach(t=>t.oninput=()=>{const s=LS("ans"+i)||{};s[t.dataset.k]=t.value;LS("ans"+i,s)})}
+function corr(i){const d=D[i],sv=LS("ans"+i)||{};
+d.ex.forEach((e,x)=>e[3].forEach((q,y)=>{const k=x+"_"+y,a=norm(sv[k]),box=$("#r"+k);let v="";
+if(q[2]){const ok=q[2].some(z=>norm(z)==a);v=`<div class="${ok?'ok':'ko'}">${ok?"✔ Correct":a?"✘ Incorrect":"✘ Sans réponse"}</div><input type=hidden class=sc data-x=${x} value=${ok?1:0}>`}
+else v=`<div>Auto-évaluation (corrigé ci-dessous) : <select class=sc data-x=${x} onchange=calc(${i})><option value=0>0 – faux</option><option value=.5>½ – méthode juste, résultat faux</option><option value=1>1 – juste</option></select></div>`;
+box.innerHTML=v+`<div class=sol>${q[1]}</div>`}));
+$("#res").innerHTML="<div class=card id=sum></div>";calc(i);MathJax.typesetPromise([$("#main")])}
+function calc(i){const d=D[i];let tot=0,max=0,lines=[],weak=[];
+d.ex.forEach((e,x)=>{const sc=[...document.querySelectorAll(`.sc[data-x="${x}"]`)];const n=sc.length,p=e[1]/n;const got=sc.reduce((s,c)=>s+(+c.value),0)*p;tot+=got;max+=e[1];lines.push(`${e[0].split(" –")[0]} : ${+got.toFixed(2)}/${e[1]}`);if(got<e[1]*.6)weak.push(e[0].split(" –")[0])});
+const r=n=>String(+n.toFixed(2)).replace(".",",");
+$("#sum").innerHTML=`<span class=big>Note : ${r(tot)}/${r(max)}</span> (${Math.round(tot/max*100)} %)<br>${lines.join("<br>")}<p class=note>Points = barème original par exercice, réparti également entre questions (estimation). Les questions à résultat court sont corrigées automatiquement (comparaison de texte simplifiée) ; les autres par ton auto-évaluation face au corrigé.</p><p><b>À retravailler :</b> ${weak.length?weak.join(", ")+" → relis le cours et refais ces exercices.":"rien de critique, bravo."}</p><button class=btn onclick="save(${i},${tot},${max},'${lines.join(" · ")}')">Enregistrer dans l’historique</button>`;$("#sum").dataset.n=1}
+function save(i,n,m,l){const h=LS("hist")||[];h.push({t:D[i].t,note:String(+n.toFixed(2)).replace(".",","),max:m,pct:Math.round(n/m*100),ex:l,date:new Date().toLocaleDateString("fr-FR")});LS("hist",h);alert("Enregistré.")}
+const CH=[
+{t:["1. Trinôme du second degré","١. ثلاثي الحدود من الدرجة الثانية"],s:{fr:[
+["A. Introduction",R`<p>Un <b>trinôme</b> est une expression $ax^2+bx+c$ avec $a\ne0$. On l’utilise pour résoudre des équations, factoriser et étudier un signe (inéquations). <i>Prérequis :</i> développer, factoriser, résoudre $ax+b=0$.</p>`],
+["B. Explication progressive",R`<p>Idée simple : on cherche les valeurs de $x$ qui annulent le trinôme (les <b>racines</b>). Le nombre $\Delta=b^2-4ac$ (« discriminant ») nous dit combien il y en a. Si $\Delta>0$ : deux ; $\Delta=0$ : une ; $\Delta<0$ : aucune dans IR. La <b>forme canonique</b> $a\left[(x+\frac b{2a})^2-\frac{\Delta}{4a^2}\right]$ explique pourquoi : un carré est toujours positif.</p>`],
+["C. Définitions et propriétés",R`<ul><li><b>Racines</b> (si $\Delta\ge0$) : $x=\frac{-b\pm\sqrt\Delta}{2a}$. Condition : $a\ne0$.</li><li><b>Somme/produit</b> : $S=-\frac ba$, $P=\frac ca$ (si Δ≥0). Si $x_1$ est racine, l’autre est $P/x_1$.</li><li><b>Factorisation</b> : $a(x-x_1)(x-x_2)$.</li><li><b>Signe</b> : signe de $a$ à l’extérieur des racines, de $-a$ entre elles ; si $\Delta<0$, signe de $a$ partout.</li></ul>`],
+["D. Méthodes",R`<p><b>Résoudre/étudier le signe :</b> 1) repérer a, b, c ; 2) calculer Δ ; 3) racines ; 4) tableau de signes ; 5) conclure avec les crochets. <b>Racine évidente :</b> tester $0,\pm1,\pm2$ ou $a+b+c=0$ (alors 1 est racine). <b>Deux nombres de somme S et produit P :</b> résoudre $X^2-SX+P=0$.</p>`],
+["E. Exemples corrigés",R`<p>1) $x^2-5x+6=0$ : $\Delta=1$, $x=\frac{5\pm1}2$ ⇒ $S=\{2,3\}$.</p><p>2) Signe de $-x^2+x+6$ : racines $-2$ et $3$, $a<0$ ⇒ positif sur $]-2,3[$.</p><p>3) $2$ est racine de $2x^2-5x+2$ : $P=1$ donc l’autre racine est $\frac12$.</p><p>4) Pour quels $m$ a-t-on $x^2-2mx+m+2>0$ pour tout x ? Il faut $\Delta<0$ : $4m^2-4(m+2)<0\iff m^2-m-2<0\iff m\in]-1,2[$.</p>`],
+["F. Pièges",R`<p>Oublier $a\ne0$ ; se tromper de signe dans $-b$ ; oublier les racines dans ≤ / ≥ ; écrire « Δ<0 donc pas de solution » pour une <i>inéquation</i> (le signe de a répond).</p>`]],
+ar:[
+["أ. تقديم",R`<p>ثلاثي الحدود هو عبارة من الشكل $ax^2+bx+c$ حيث $a\ne0$. نستعمله لحل المعادلات والتفكيك ودراسة الإشارة (المتراجحات). <i>المكتسبات السابقة:</i> النشر والتفكيك وحل $ax+b=0$.</p>`],
+["ب. شرح تدريجي",R`<p>الفكرة: نبحث عن قيم $x$ التي تعدم العبارة (الجذور). العدد $\Delta=b^2-4ac$ (المميز) يخبرنا بعددها: إذا كان $\Delta>0$ فهناك جذران، وإذا كان $\Delta=0$ فهناك جذر مضاعف، وإذا كان $\Delta<0$ فلا جذور في IR. الشكل النموذجي $a\left[(x+\frac b{2a})^2-\frac{\Delta}{4a^2}\right]$ يفسر ذلك: المربع دائما موجب.</p>`],
+["ج. تعاريف وخاصيات",R`<ul><li><b>الجذور</b> (إذا كان $\Delta\ge0$): $x=\frac{-b\pm\sqrt\Delta}{2a}$. الشرط: $a\ne0$.</li><li><b>المجموع والجداء</b>: $S=-\frac ba$ و $P=\frac ca$. إذا كان $x_1$ جذرا فالجذر الآخر هو $P/x_1$.</li><li><b>التفكيك</b>: $a(x-x_1)(x-x_2)$.</li><li><b>الإشارة</b>: إشارة $a$ خارج الجذرين وإشارة $-a$ بينهما؛ وإذا كان $\Delta<0$ فإشارة $a$ على IR كاملا.</li></ul>`],
+["د. طرق الحل",R`<p><b>الحل أو دراسة الإشارة:</b> 1) تحديد a وb وc؛ 2) حساب المميز؛ 3) الجذور؛ 4) جدول الإشارة؛ 5) الخلاصة بالمجالات الصحيحة. <b>جذر بديهي:</b> اختبار $0,\pm1,\pm2$ أو $a+b+c=0$ (فيكون 1 جذرا). <b>عددان مجموعهما S وجداؤهما P:</b> حل $X^2-SX+P=0$.</p>`],
+["هـ. أمثلة محلولة",R`<p>1) $x^2-5x+6=0$: $\Delta=1$ و $x=\frac{5\pm1}2$ إذن $S=\{2,3\}$.</p><p>2) إشارة $-x^2+x+6$: الجذران $-2$ و $3$ و $a<0$ إذن العبارة موجبة على $]-2,3[$.</p><p>3) العدد $2$ جذر لـ $2x^2-5x+2$: الجداء $P=1$ إذن الجذر الآخر $\frac12$.</p><p>4) من أجل أي قيم $m$ يكون $x^2-2mx+m+2>0$ مهما كان x؟ يجب أن $\Delta<0$: $4m^2-4(m+2)<0\iff m^2-m-2<0\iff m\in]-1,2[$.</p>`],
+["و. أخطاء شائعة",R`<p>نسيان $a\ne0$؛ الخطأ في إشارة $-b$؛ نسيان الجذور في ≤ و ≥؛ القول «$\Delta<0$ إذن لا حل» في <i>متراجحة</i> (إشارة a هي التي تجيب).</p>`]]}},
+{t:["2. Inéquations","٢. المتراجحات"],s:{fr:[
+["A. Introduction",R`<p>Résoudre une inéquation, c’est trouver tous les $x$ qui la vérifient. Types du programme : quotient, racine carrée, valeur absolue. <i>Prérequis :</i> signe d’un trinôme.</p>`],
+["B. Explication progressive",R`<p>On ramène toujours le problème à un <b>tableau de signes</b>. Pour une fraction, le dénominateur ne doit jamais être nul. Pour une racine, ce qu’il y a dessous doit être ≥0, et élever au carré n’est permis que si les deux côtés sont positifs.</p>`],
+["C. Propriétés",R`<ul><li>$\sqrt f\le g\iff g\ge0,\ f\ge0,\ f\le g^2$.</li><li>$\sqrt f>g\iff (f\ge0\text{ et }g<0)$ ou $(g\ge0\text{ et }f>g^2)$.</li><li>$|u|\le v\iff v\ge0$ et $-v\le u\le v$.</li><li>$\frac NG\le0$ : signe de $N\times D$, avec $D\ne0$.</li></ul>`],
+["D. Méthodes",R`<p>Quotient : tout à gauche → un seul quotient → factoriser → tableau → exclure les valeurs interdites. Racine : domaine → conditions de signe → carré → intersection.</p>`],
+["E. Exemples corrigés",R`<p>1) $\frac32x-\frac54>x+2\iff\frac x2>\frac{13}4\iff x>6{,}5$.</p><p>2) $\frac{x-1}{x+2}\ge0$ : $S=]-\infty,-2[\cup[1,+\infty[$.</p><p>3) $\sqrt{2x+3}\le x$ : $x\ge0$ et $x^2-2x-3\ge0$ ⇒ $S=[3,+\infty[$.</p><p>4) $|x^2-2x-5|\le x-1$ : $x\ge1$ ; $x^2-3x-4\le0$ et $x^2-x-6\ge0$ ⇒ $S=[3,4]$.</p>`],
+["F. Pièges",R`<p>Multiplier par un dénominateur sans connaître son signe ; oublier le domaine de la racine ; garder une valeur interdite ; mettre un crochet fermé sur un zéro du dénominateur.</p>`]],
+ar:[
+["أ. تقديم",R`<p>حل متراجحة هو إيجاد كل قيم $x$ التي تحققها. الأنواع المقررة: الكسور، الجذر المربع، القيمة المطلقة. <i>المكتسبات:</i> إشارة ثلاثي الحدود.</p>`],
+["ب. شرح تدريجي",R`<p>نعود دائما إلى <b>جدول الإشارة</b>. في الكسر لا يجوز أن يكون المقام معدوما. في الجذر يجب أن يكون ما تحته ≥0، ولا يجوز التربيع إلا إذا كان الطرفان موجبين.</p>`],
+["ج. خاصيات",R`<ul><li>$\sqrt f\le g\iff g\ge0,\ f\ge0,\ f\le g^2$.</li><li>$\sqrt f>g\iff (f\ge0 \text{ و } g<0)$ أو $(g\ge0 \text{ و } f>g^2)$.</li><li>$|u|\le v\iff v\ge0$ و $-v\le u\le v$.</li><li>$\frac NG\le0$: إشارة $N\times D$ مع $D\ne0$.</li></ul>`],
+["د. طرق الحل",R`<p>الكسر: نقل كل شيء إلى طرف ← كسر واحد ← تفكيك ← جدول ← استثناء القيم الممنوعة. الجذر: مجموعة التعريف ← شروط الإشارة ← التربيع ← التقاطع.</p>`],
+["هـ. أمثلة محلولة",R`<p>1) $\frac32x-\frac54>x+2\iff\frac x2>\frac{13}4\iff x>6{,}5$.</p><p>2) $\frac{x-1}{x+2}\ge0$: $S=]-\infty,-2[\cup[1,+\infty[$.</p><p>3) $\sqrt{2x+3}\le x$: $x\ge0$ و $x^2-2x-3\ge0$ إذن $S=[3,+\infty[$.</p><p>4) $|x^2-2x-5|\le x-1$: $x\ge1$؛ $x^2-3x-4\le0$ و $x^2-x-6\ge0$ إذن $S=[3,4]$.</p>`],
+["و. أخطاء شائعة",R`<p>الضرب في مقام دون معرفة إشارته؛ نسيان مجموعة تعريف الجذر؛ إبقاء قيمة ممنوعة؛ وضع مجال مغلق عند جذر المقام.</p>`]]}},
+{t:["3. Barycentre","٣. المرجح"],s:{fr:[
+["A. Introduction",R`<p>Le barycentre est le « point d’équilibre » de points pondérés (comme le centre de gravité d’une balançoire). Il sert à prouver des alignements et à décrire des ensembles de points. <i>Prérequis :</i> vecteurs, relation de Chasles.</p>`],
+["B. Explication progressive",R`<p>Si A pèse 2 et B pèse 1, le point d’équilibre est plus près de A : $G$ est au tiers de [AB] en partant de A. En formule : $2\v{GA}+\v{GB}=\vec0$.</p>`],
+["C. Définitions et propriétés",R`<ul><li><b>Définition</b> ($\alpha+\beta\ne0$) : $G=\text{bar}\{(A,\alpha),(B,\beta)\}\iff\alpha\v{GA}+\beta\v{GB}=\vec0\iff\v{AG}=\frac\beta{\alpha+\beta}\v{AB}$.</li><li><b>Réduction</b> : $\alpha\v{MA}+\beta\v{MB}+\gamma\v{MC}=(\alpha+\beta+\gamma)\v{MG}$ pour tout M (somme ≠0).</li><li><b>Associativité</b> : on remplace des points par leur barycentre affecté de la somme de leurs poids.</li><li>Poids multipliés par un même réel non nul : même barycentre.</li></ul>`],
+["D. Méthodes",R`<p><b>Montrer que G est barycentre :</b> partir de la relation vectorielle, introduire le point voulu par Chasles. <b>Alignement :</b> écrire G comme barycentre de deux points. <b>Ensemble :</b> réduire chaque somme (poids≠0), puis $MG=MH$ (médiatrice) ou $MG=r$ (cercle).</p>`],
+["E. Exemples corrigés",R`<p>1) G = bar{(A,2),(B,1)} : $\v{AG}=\frac13\v{AB}$.</p><p>2) $\v{AH}=\frac13\v{AC}$ : $3\v{AH}=\v{AH}+\v{HC}$ ⇒ $2\v{HA}+\v{HC}=\vec0$, H = bar{(A,2),(C,1)}.</p><p>3) $\|2\v{MA}+\v{MB}\|=\|\v{MA}-\v{MB}\|$ : $3MG=AB$, cercle de centre G, rayon $\frac{AB}3$.</p><p>4) G = bar{(A,−1),(B,2),(C,3)} : I = bar{(A,−1),(B,2)} (poids total 1) ⇒ G = bar{(I,1),(C,3)}.</p>`],
+["F. Pièges",R`<p>Oublier de vérifier que la somme des poids ≠0 ; confondre $\v{GA}$ et $\v{AG}$ ; mal écrire les poids d’un vecteur négatif ; oublier le facteur du cercle ($r/|k|$).</p>`]],
+ar:[
+["أ. تقديم",R`<p>المرجح هو «نقطة التوازن» لنقط مثقلة (كمركز ثقل أرجوحة). نستعمله لإثبات استقامية نقط ووصف مجموعات نقط. <i>المكتسبات:</i> الأشعة وعلاقة شال.</p>`],
+["ب. شرح تدريجي",R`<p>إذا كان وزن A هو 2 ووزن B هو 1 فنقطة التوازن أقرب إلى A: النقطة $G$ تقع على ثلث [AB] انطلاقا من A. بالصيغة: $2\v{GA}+\v{GB}=\vec0$.</p>`],
+["ج. تعاريف وخاصيات",R`<ul><li><b>التعريف</b> ($\alpha+\beta\ne0$): $G=\text{bar}\{(A,\alpha),(B,\beta)\}\iff\alpha\v{GA}+\beta\v{GB}=\vec0\iff\v{AG}=\frac\beta{\alpha+\beta}\v{AB}$.</li><li><b>الاختزال</b>: $\alpha\v{MA}+\beta\v{MB}+\gamma\v{MC}=(\alpha+\beta+\gamma)\v{MG}$ مهما كانت M (المجموع ≠0).</li><li><b>الخاصية التجميعية</b>: نعوض نقطا بمرجحها مرفقا بمجموع أوزانها.</li><li>ضرب الأوزان في نفس العدد غير المعدوم لا يغير المرجح.</li></ul>`],
+["د. طرق الحل",R`<p><b>إثبات أن G مرجح:</b> الانطلاق من العلاقة الشعاعية وإدخال النقطة المطلوبة بعلاقة شال. <b>الاستقامية:</b> كتابة G كمرجح لنقطتين. <b>مجموعة نقط:</b> اختزال كل مجموع (الأوزان≠0) ثم $MG=MH$ (محور القطعة) أو $MG=r$ (دائرة).</p>`],
+["هـ. أمثلة محلولة",R`<p>1) G = مرجح {(A,2),(B,1)}: $\v{AG}=\frac13\v{AB}$.</p><p>2) $\v{AH}=\frac13\v{AC}$: $3\v{AH}=\v{AH}+\v{HC}$ إذن $2\v{HA}+\v{HC}=\vec0$ و H = مرجح {(A,2),(C,1)}.</p><p>3) $\|2\v{MA}+\v{MB}\|=\|\v{MA}-\v{MB}\|$: $3MG=AB$ دائرة مركزها G وشعاعها $\frac{AB}3$.</p><p>4) G = مرجح {(A,−1),(B,2),(C,3)}: I = مرجح {(A,−1),(B,2)} (مجموع الأوزان 1) إذن G = مرجح {(I,1),(C,3)}.</p>`],
+["و. أخطاء شائعة",R`<p>نسيان التحقق من أن مجموع الأوزان ≠0؛ الخلط بين $\v{GA}$ و $\v{AG}$؛ الخطأ في أوزان شعاع سالب؛ نسيان المعامل في الدائرة ($r/|k|$).</p>`]]}},
+{t:["4. Repère orthonormé","٤. المعلم المتعامد الممنظم"],s:{fr:[
+["A. Introduction",R`<p>Dans un repère $(O,\vec i,\vec j)$, un point est un couple $(x,y)$. On calcule distances et angles droits avec des nombres. <i>Prérequis :</i> racine carrée, vecteurs.</p>`],
+["B. Explication progressive",R`<p>Aller de A à B, c’est avancer de $x_B-x_A$ horizontalement et de $y_B-y_A$ verticalement : ce sont les composantes de $\v{AB}$. Pythagore donne alors la longueur.</p>`],
+["C. Propriétés",R`<ul><li>$\v{AB}\binom{x_B-x_A}{y_B-y_A}$ ; $AB=\sqrt{(x_B-x_A)^2+(y_B-y_A)^2}$.</li><li>$\vec u\binom xy\perp\vec v\binom{x'}{y'}\iff xx'+yy'=0$ (repère orthonormé).</li><li>Losange : quatre côtés égaux. Isocèle : deux côtés égaux.</li></ul>`],
+["D. Méthodes",R`<p>Nature d’un triangle : calculer les trois longueurs. Perpendiculaires : produit scalaire en coordonnées nul. Losange : quatre côtés égaux.</p>`],
+["E. Exemples corrigés",R`<p>1) A(−1,2), B(2,6) : $\v{AB}\binom34$, $AB=5$.</p><p>2) $\vec u\binom{-2}1$, $\vec v\binom36$ : $-6+6=0$, orthogonaux.</p><p>3) A(2,4), B(−2,1), C(2,−1) : $AB=5=AC$, isocèle en A.</p><p>4) Avec D(−2,−4) : $AB=BD=DC=CA=5$, ABDC est un losange.</p>`],
+["F. Pièges",R`<p>Inverser l’ordre (arrivée − départ) ; oublier la racine ; appliquer la règle d’orthogonalité dans un repère non orthonormé.</p>`]],
+ar:[
+["أ. تقديم",R`<p>في معلم $(O,\vec i,\vec j)$ تتحدد النقطة بالزوج $(x,y)$. نحسب المسافات والزوايا القائمة بالأعداد. <i>المكتسبات:</i> الجذر المربع والأشعة.</p>`],
+["ب. شرح تدريجي",R`<p>الذهاب من A إلى B يعني التقدم بـ $x_B-x_A$ أفقيا وبـ $y_B-y_A$ عموديا: هما مركبتا $\v{AB}$. ثم تعطي مبرهنة فيتاغورس الطول.</p>`],
+["ج. خاصيات",R`<ul><li>$\v{AB}\binom{x_B-x_A}{y_B-y_A}$ ؛ $AB=\sqrt{(x_B-x_A)^2+(y_B-y_A)^2}$.</li><li>$\vec u\binom xy\perp\vec v\binom{x'}{y'}\iff xx'+yy'=0$ (معلم متعامد ممنظم).</li><li>المعين: أضلاعه الأربعة متقايسة. المثلث المتقايس الضلعين: ضلعان متقايسان.</li></ul>`],
+["د. طرق الحل",R`<p>طبيعة مثلث: حساب الأطوال الثلاثة. التعامد: انعدام $xx'+yy'$. المعين: أربعة أضلاع متقايسة.</p>`],
+["هـ. أمثلة محلولة",R`<p>1) A(−1,2) و B(2,6): $\v{AB}\binom34$ و $AB=5$.</p><p>2) $\vec u\binom{-2}1$ و $\vec v\binom36$: $-6+6=0$ إذن متعامدان.</p><p>3) A(2,4) و B(−2,1) و C(2,−1): $AB=5=AC$ إذن مثلث متقايس الضلعين في A.</p><p>4) مع D(−2,−4): $AB=BD=DC=CA=5$ إذن ABDC معين.</p>`],
+["و. أخطاء شائعة",R`<p>عكس الترتيب (الوصول − الانطلاق)؛ نسيان الجذر؛ تطبيق قاعدة التعامد في معلم غير متعامد ممنظم.</p>`]]}}];
+const F=[
+{c:0,t:["Discriminant et racines","المميز والجذور"],f:R`\Delta=b^2-4ac,\quad x=\frac{-b\pm\sqrt\Delta}{2a}`,k:["a≠0 ; racines réelles si Δ≥0","a≠0 ؛ جذور حقيقية إذا Δ≥0"],m:["Calculer Δ → compter les racines → les calculer","حساب Δ ← عدد الجذور ← حسابها"],e:[R`$x^2-5x+6$ : Δ=1, racines 2 et 3`,R`$x^2-5x+6$: Δ=1 والجذران 2 و 3`],a:["Oublier le signe de −b","الخطأ في إشارة −b"],s:["Si a+b+c=0, 1 est racine","إذا كان a+b+c=0 فالعدد 1 جذر"]},
+{c:0,t:["Somme et produit","المجموع والجداء"],f:R`S=-\frac ba,\quad P=\frac ca`,k:["Δ≥0","Δ≥0"],m:["Connaître une racine → autre = P/x₁","معرفة جذر ← الآخر = P/x₁"],e:[R`$2x^2-5x+2$ : 2 racine, P=1 → l’autre ½`,R`$2x^2-5x+2$: 2 جذر و P=1 إذن الآخر ½`],a:["Confondre S et −S","الخلط بين S و −S"],s:["Système x+y=S, xy=P ⇒ X²−SX+P=0","النظمة x+y=S و xy=P ⇒ X²−SX+P=0"]},
+{c:0,t:["Signe du trinôme","إشارة ثلاثي الحدود"],f:R`\text{signe de }a\text{ à l’extérieur},\ -a\text{ entre les racines}`,k:["Δ>0 ; si Δ<0 signe de a partout","Δ>0 ؛ إذا Δ<0 فإشارة a دائما"],m:["Racines → tableau de signes → conclure","الجذور ← جدول الإشارة ← الخلاصة"],e:[R`$-x^2+x+6>0$ sur $]-2,3[$`,R`$-x^2+x+6>0$ على $]-2,3[$`],a:["Oublier les racines pour ≤, ≥","نسيان الجذور في ≤ و ≥"],s:["Dessiner le tableau toujours","ارسم الجدول دائما"]},
+{c:1,t:["Inéquation avec quotient","متراجحة بكسر"],f:R`\frac{N}{D}\ge0\iff ND\ge0,\ D\ne0`,k:["D≠0","D≠0"],m:["Tout à gauche → un quotient → tableau → exclure D=0","كل شيء إلى طرف ← كسر واحد ← جدول ← استثناء D=0"],e:[R`$\frac{x-1}{x+2}\ge0$ : $]-\infty,-2[\cup[1,+\infty[$`,R`$\frac{x-1}{x+2}\ge0$: $]-\infty,-2[\cup[1,+\infty[$`],a:["Multiplier par D sans connaître son signe","الضرب في D دون معرفة إشارته"],s:["Crochet ouvert sur les zéros de D","مجال مفتوح عند أصفار D"]},
+{c:1,t:["Inéquation avec racine","متراجحة بجذر"],f:R`\sqrt f\le g\iff g\ge0,\ f\ge0,\ f\le g^2`,k:["Les deux côtés positifs avant de mettre au carré","الطرفان موجبان قبل التربيع"],m:["Domaine → signes → carré → intersection","التعريف ← الإشارات ← التربيع ← التقاطع"],e:[R`$\sqrt{2x+3}\le x$ : $[3,+\infty[$`,R`$\sqrt{2x+3}\le x$: $[3,+\infty[$`],a:["Oublier le domaine","نسيان مجموعة التعريف"],s:["Conclure par intersection","الخلاصة بالتقاطع"]},
+{c:1,t:["Valeur absolue","القيمة المطلقة"],f:R`|u|\le v\iff v\ge0\text{ et }-v\le u\le v`,k:["v≥0","v≥0"],m:["Poser v≥0 → deux inéquations → intersection","v≥0 ← متراجحتان ← التقاطع"],e:[R`$|x^2-2x-5|\le x-1$ : $[3,4]$`,R`$|x^2-2x-5|\le x-1$: $[3,4]$`],a:["Oublier la condition v≥0","نسيان الشرط v≥0"],s:["Séparer en deux inégalités","افصل إلى متراجحتين"]},
+{c:2,t:["Barycentre et réduction","المرجح والاختزال"],f:R`\alpha\v{GA}+\beta\v{GB}=\vec0,\ \v{AG}=\frac{\beta}{\alpha+\beta}\v{AB},\ \sum\alpha_i\v{MA_i}=(\sum\alpha_i)\v{MG}`,k:["Somme des poids ≠0","مجموع الأوزان ≠0"],m:["Chasles → isoler → lire les poids","شال ← عزل ← قراءة الأوزان"],e:[R`$2\v{HA}+\v{HC}=\vec0$ ⇒ $\v{AH}=\frac13\v{AC}$`,R`$2\v{HA}+\v{HC}=\vec0$ ⇒ $\v{AH}=\frac13\v{AC}$`],a:["Somme des poids nulle","مجموع الأوزان معدوم"],s:["Alignement : G = bar de 2 points","الاستقامية: G مرجح لنقطتين"]},
+{c:2,t:["Ensembles de points","مجموعات النقط"],f:R`MG=MH\Rightarrow\text{médiatrice}\ ;\ MG=r\Rightarrow\text{cercle}`,k:["Poids totaux ≠0","مجموعا الأوزان ≠0"],m:["Réduire chaque somme → comparer","اختزال كل مجموع ← المقارنة"],e:[R`$\|2\v{MA}+\v{MB}\|=AB$ : cercle (G, AB/3)`,R`$\|2\v{MA}+\v{MB}\|=AB$: دائرة (G, AB/3)`],a:["Oublier de diviser par le poids total","نسيان القسمة على مجموع الأوزان"],s:["Si le vecteur somme est constant → norme constante","إذا كان شعاع المجموع ثابتا فالنظيم ثابت"]},
+{c:3,t:["Distance et orthogonalité","المسافة والتعامد"],f:R`AB=\sqrt{(x_B-x_A)^2+(y_B-y_A)^2},\ xx'+yy'=0`,k:["Repère orthonormé","معلم متعامد ممنظم"],m:["Composantes → calcul","المركبات ← الحساب"],e:[R`A(−1,2), B(2,6) : AB=5`,R`A(−1,2) و B(2,6): AB=5`],a:["Inverser départ/arrivée","عكس الانطلاق والوصول"],s:["Losange = 4 côtés égaux","المعين = 4 أضلاع متقايسة"]}];
+const st=document.createElement('style');st.textContent=`.rtl{direction:rtl;text-align:right;font-size:17px}.card h4{margin:0 0 6px}.tabs button{margin:2px}.blk{border-left:4px solid var(--a);padding:6px 10px;margin:6px 0;border-radius:6px;background:var(--bg)}.rtl .blk{border-left:0;border-right:4px solid var(--a)}.blk b.l{font-size:11px;text-transform:uppercase;letter-spacing:.06em;display:block;color:var(--m)}.blk.at{border-color:var(--ko)}.blk.as{border-color:var(--ok)}.fiche h3{margin:0 0 6px}.hide{display:none}@media print{@page{size:A4;margin:12mm}nav,.noprint{display:none!important}body{display:block;background:#fff;color:#000}main{overflow:visible;max-width:none;padding:0}.card{break-inside:avoid;border-color:#999}body.one .fiche:not(.pr){display:none}}`;document.head.appendChild(st);
+let lang=LS("lang")||"fr",fch=-1,fmode="all",fq="";
+const L={fr:{f:"Formule",k:"Conditions",m:"Méthode",e:"Exemple",a:"Attention",s:"Astuce"},ar:{f:"صيغة",k:"شروط",m:"طريقة",e:"مثال",a:"انتباه",s:"نصيحة"}};
+function retype(){const m=$("#main");if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise([m])}
+function setLang(l){const sc=$("#main").scrollTop;lang=l;LS("lang",l);go(cur);$("#main").scrollTop=sc}
+function langBtn(){return `<button class="btn noprint" onclick="setLang('${lang=='fr'?'ar':'fr'}')">${lang=='fr'?'Traduire le cours en arabe':'Retour au français'}</button>`}
+function coursePage(){const nb=CH.map((c,i)=>`<a href="#ch${i}" onclick="document.getElementById('ch${i}').scrollIntoView();return false">${c.t[lang=='fr'?0:1]}</a>`).join(" · ");
+$("#main").innerHTML=`<div class="${lang=='ar'?'rtl':''}"><h2>${lang=='fr'?'Cours – manuel interactif':'الدرس – كتاب تفاعلي'}</h2>${langBtn()}<p class=note>${nb}</p>`+CH.map((c,i)=>`<h3 id=ch${i}>${c.t[lang=='fr'?0:1]}</h3>`+c.s[lang].map(([t,b])=>`<div class=card><h4>${t}</h4>${b}</div>`).join("")).join("")+`<p class=note>${lang=='fr'?'Traduction arabe rédigée directement dans la plateforme (sans moteur externe) ; elle couvre les 4 chapitres affichés.':'الترجمة العربية مكتوبة داخل المنصة (دون محرك خارجي) وتشمل الفصول الأربعة المعروضة.'}</p></div>`}
+function fichesPage(){const i=lang=='fr'?0:1,T=L[lang];const chips=[-1,...CH.map((_,x)=>x)].map(x=>`<button class="btn ${fch==x?'':'s'}" onclick="fch=${x};go('resume')">${x<0?(i?'الكل':'Tous'):CH[x].t[i].split('.')[0]+'.'}</button>`).join("");
+const list=F.map((f,x)=>({f,x})).filter(({f})=>(fch<0||f.c==fch)&&(!fq||JSON.stringify([f.t,f.k,f.m,f.a,f.s]).toLowerCase().includes(fq.toLowerCase())));
+$("#main").innerHTML=`<div class="${lang=='ar'?'rtl':''}"><h2>${i?'بطاقات المراجعة':'Fiches de révision'}</h2><div class=noprint>${langBtn()}<button class="btn s" onclick="fmode=fmode=='f'?'all':'f';go('resume')">${fmode=='f'?(i?'إظهار الكل':'Tout afficher'):(i?'الصيغ فقط':'Formules seulement')}</button><button class="btn s" onclick="fmode=fmode=='q'?'all':'q';go('resume')">${fmode=='q'?(i?'الوضع العادي':'Mode normal'):(i?'مراجعة سريعة':'Révision rapide')}</button><button class="btn s" onclick="document.body.classList.remove('one');window.print()">${i?'طباعة الكل':'Imprimer tout'}</button><br>${chips}<input id=fq value="${fq}" placeholder="${i?'بحث…':'Rechercher…'}" oninput="fq=this.value;fichesPage();retype();const e=$('#fq');e.focus();e.setSelectionRange(99,99)"></div>`+(list.length?list.map(({f,x})=>`<div class="card fiche" id=fi${x}><h3>${f.t[i]}</h3><button class="btn s noprint" onclick="printOne(${x})">${i?'طباعة':'Imprimer'}</button><div class=blk><b class=l>${T.f}</b>$$${f.f}$$</div>`+(fmode=='f'?'':`<div class=blk><b class=l>${T.k}</b>${f.k[i]}</div>`+(fmode=='q'?'':`<div class=blk><b class=l>${T.m}</b>${f.m[i]}</div><div class=blk><b class=l>${T.e}</b>${f.e[i]}</div>`)+`<div class="blk at"><b class=l>${T.a}</b>${f.a[i]}</div><div class="blk as"><b class=l>${T.s}</b>${f.s[i]}</div>`)+`</div>`).join(""):`<p>${i?'لا نتائج':'Aucun résultat'}</p>`)+`</div>`}
+function printOne(x){document.body.classList.add('one');const e=$('#fi'+x);e.classList.add('pr');window.print();e.classList.remove('pr');document.body.classList.remove('one')}
+const _go=go;go=function(k){if(k=='cours'||k=='resume'){cur=k;nav();$("#main").scrollTop=0;k=='cours'?coursePage():fichesPage();retype()}else _go(k)};
+go("home");
+</script></body></html>
